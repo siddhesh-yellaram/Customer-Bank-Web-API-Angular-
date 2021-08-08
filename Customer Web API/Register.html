@@ -1,0 +1,63 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Register</title>
+</head>
+
+<body>
+    <h2 class="text-center" style="font-size: 3.05rem;">Register</h2>
+    <form name="myForm" style="width: 450px; margin: auto;">
+
+        <div class="form-group">
+            <label for="uname">User Name</label>
+            <input type="text" name="uname" class="form-control" ng-model="vm.accountDetails.UserName"
+                ng-required="true">
+            <span style="color:red" ng-show="myForm.uname.$touched && myForm.uname.$invalid">
+                username is required
+            </span>
+
+        </div>
+
+        <div class="form-group">
+            <label for="bal">Initial Deposit Amount (Must be At least 500)</label>
+            <input type="text" name="bal" class="form-control" ng-model="vm.accountDetails.Balance" ng-required="true">
+            <span style="color:red" ng-show="myForm.bal.$touched && myForm.bal.$invalid">
+                initial deposit amount is required
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" ng-model="vm.accountDetails.RePassword"
+                ng-required="true">
+            <span style="color:red" ng-show="myForm.password.$touched && myForm.password.$invalid">
+                password is required
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label for="repassword">Re-type Password</label>
+            <input type="password" name="repassword" class="form-control" ng-model="vm.accountDetails.Password"
+                ng-required="true">
+            <span style="color:red" ng-show="myForm.repassword.$touched && myForm.repassword.$invalid ">
+                password is required
+            </span>
+        </div>
+
+        <div class="form-group">
+            <button ng-click="submit()" class="btn btn-primary">Submit</button>
+        </div>
+
+        <div>
+            <p ngClass="vm.class" ng-style="vm.style">{{vm.requestMessage}}</p>
+        </div>
+    </form>
+
+</body>
+
+</html>

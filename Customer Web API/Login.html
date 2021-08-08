@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Login</title>
+</head>
+
+<body>
+    <h2 class="text-center" style="font-size: 3.05rem;">Login</h2>
+    <form name="myForm" style="width: 450px; margin: auto;">
+
+        <div class="form-group">
+            <label for="uname">User Name</label>
+            <input type="text" name="uname" class="form-control" ng-model="vm.loginDetails.UserName" ng-required="true">
+            <span style="color:red" ng-show="myForm.uname.$touched && myForm.uname.$invalid">
+                username is required
+            </span>
+
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" ng-model="vm.loginDetails.Password"
+                ng-required="true">
+            <span style="color:red" ng-show="myForm.password.$touched && myForm.password.$invalid ">
+                password is required
+            </span>
+        </div>
+
+        <div class="form-group">
+            <button ng-click="login()" class="btn btn-primary">Login</button>
+        </div>
+
+        <div>
+            <p ngClass="vm.class" ng-style="vm.style">{{vm.requestMessage}}</p>
+        </div>
+    </form>
+
+</body>
+
+</html>

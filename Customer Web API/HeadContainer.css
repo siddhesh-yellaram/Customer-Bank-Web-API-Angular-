@@ -1,0 +1,9 @@
+header {
+    max-width: 100%;
+    background-color: lightskyblue;
+}
+
+.container {
+    margin-top: 50px;
+    border: 1px solid lightblue;
+}
